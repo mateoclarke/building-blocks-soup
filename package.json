@@ -4,11 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test.js"
   },
   "author": "",
   "license": "BSD",
   "dependencies": {
     "express": "~4.10.6"
+  },
+  "devDependencies": {
+    "supertest": "~0.15.0",
+    "mocha": "~2.1.0"
   }
 }
