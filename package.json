@@ -12,7 +12,8 @@
     "express": "~4.10.6",
     "body-parser": "~1.10.1",
     "redis": "~0.12.1",
-    "hiredis": "~0.1.17"
+    "hiredis": "~0.1.17",
+    "ejs": "~2.0.8"
   },
   "devDependencies": {
     "supertest": "~0.15.0",
