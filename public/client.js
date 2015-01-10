@@ -2,20 +2,24 @@ $(function(){
 
 	$.get('/cities', appendToList);
 
-	$('form').on('submit', function(event){
-		event.preventDefault();
+	$('form').on('submit', function(event) {
+	  event.preventDefault();
 
-		var form = $(this);
-		var cityData = form.serialize();
+	  var form = $(this);
+	  var cityData = form.serialize();
 
-		$.ajax({
-			type: 'POST',
-			url: '/cities',
-			data: cityData
-		}).done(function(cityName){
-			appendToList([cityName]);
-			form.trigger('reset');
-		});
+	  $('.alert').hide();
+
+	  $.ajax({
+	    type: 'POST', url: '/cities', data: cityData
+	  })
+	  .error(function() {
+	    $('.alert').show();
+	  })
+	  .success(function(cityName){
+	    appendToList([cityName]);
+	    form.trigger('reset');
+	  });
 	});
 
 	function appendToList(cities) {
